@@ -1,0 +1,109 @@
+body {
+  background-color: #eef9bf;
+  width: 100%;
+  height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+
+  padding-top: 40px;
+  padding-bottom: 47px;
+
+  font-family: "Roboto";
+  font-size: 56px;
+  font-weight: 700;
+  color: #75b79e;
+}
+
+.jogo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 60%;
+}
+
+.cartas {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  width: 100%;
+}
+
+.carta {
+  width: 117px;
+  height: 146px;
+
+  position: relative;
+
+  margin: 20px;
+}
+
+.carta:hover {
+  cursor: pointer;
+}
+
+.face {
+  width: 100%;
+  height: 100%;
+  background-color: #a7e9af;
+  border-radius: 5px;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  backface-visibility: hidden;
+  transition: all 0.5s;
+  transform-style: preserve-3d;
+}
+
+.verso {
+  transform: rotateY(180deg);
+}
+
+.flip-container:hover {
+  transform: rotateY(-180deg);
+}
+
+.verso.virarVerso {
+  transform: rotateY(0deg);
+}
+
+.frente.virarFrente {
+  transform: rotateY(-180deg);
+}
+
+.frente img {
+  width: 100px;
+  height: 100px;
+}
+
+.verso img {
+  width: 100px;
+  height: 100px;
+}
+
+@media (max-width: 600px) {
+  header {
+    font-size: 36px;
+    text-align: center;
+  }
+
+  .jogo {
+    width: 100%;
+  }
+}
+
+@media (max-width: 1300px) {
+  .jogo {
+    width: 80%;
+  }
+}
